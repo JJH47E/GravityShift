@@ -43,7 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ebd8381f012bc479ca728abf6718cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TxtFile: {fileID: 4900000, guid: 63a5ea015f3dcda4580599f0bf162569, type: 3}
+  TxtFile: 
   block: {fileID: 7689680307750935825, guid: 8c4187f846e0fa34588dd01f4b1c9bc0, type: 3}
   player: {fileID: 3769965353054947246, guid: e77fbb065a6a34e4a880a42b09fb98b0, type: 3}
   finish: {fileID: 5906002522435706697, guid: 556103da73b2739429fe87307e74baaf, type: 3}
+  key: {fileID: 4730809241249533995, guid: 707dbccbb6f81f44a8303861c35e3575, type: 3}
+  barrier: {fileID: 613734980606275089, guid: 8723e6b5c298e8046b3492a8f0e546ed, type: 3}

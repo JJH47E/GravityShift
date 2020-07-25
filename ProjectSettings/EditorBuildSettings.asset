@@ -6,6 +6,57 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/menu.unity
+    guid: 0b6d4925eed5b164492b68eb6cd74cf3
+  - enabled: 1
     path: Assets/Scenes/lvl1.unity
     guid: d1ffa63af17a97f44a6b14f9cc6e2c67
+  - enabled: 1
+    path: Assets/Scenes/help.unity
+    guid: d7805842597048342b09fb55f2623733
+  - enabled: 1
+    path: Assets/Scenes/custom.unity
+    guid: 82e2fe33cf5fafa42b95e492cba24b67
+  - enabled: 1
+    path: Assets/Scenes/playCustom.unity
+    guid: f9a7a0f090846f347a975b9b55e3bd55
+  - enabled: 1
+    path: Assets/Scenes/lvlsel.unity
+    guid: d4361156240459b48901c235f5c1eb2c
+  - enabled: 1
+    path: Assets/Scenes/PostLvl.unity
+    guid: 80cbb1d27c475d542ace41e5280956f7
+  - enabled: 1
+    path: Assets/Scenes/lvl2.unity
+    guid: 0ef99bb121315eb42b03ed2b754fc56e
+  - enabled: 1
+    path: Assets/Scenes/lvl3.unity
+    guid: 9350a637136ccdb40b0f5dd92df0c45c
+  - enabled: 1
+    path: Assets/Scenes/lvl4.unity
+    guid: bf03c8f1757129846b7a0efdbbe09e32
+  - enabled: 1
+    path: Assets/Scenes/lvl5.unity
+    guid: 3115074bcff9be145a1c5a7db898957b
+  - enabled: 1
+    path: Assets/Scenes/lvl6.unity
+    guid: 06fd296ba1b6f204f9a0f07bac783eae
+  - enabled: 1
+    path: Assets/Scenes/lvl7.unity
+    guid: e0c4a0680777d474791dad4d495e94ca
+  - enabled: 1
+    path: Assets/Scenes/lvl8.unity
+    guid: 86ca51293218dba41b40a60db963d6cf
+  - enabled: 1
+    path: Assets/Scenes/lvl9.unity
+    guid: 10afb41cc3f928a48972de3756501364
+  - enabled: 1
+    path: Assets/Scenes/lvl10.unity
+    guid: 30eb873c737122942bc0f2d2bc949aae
+  - enabled: 1
+    path: Assets/Scenes/lvl11.unity
+    guid: 284be787af4a61d48b9e60bf8f398eb5
+  - enabled: 1
+    path: Assets/Scenes/lvl12.unity
+    guid: a032ccfbb2df63d46a5546c2e7890760
   m_configObjects: {}

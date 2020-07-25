@@ -7,12 +7,12 @@ public class customLevelBuilder : MonoBehaviour
 {
     public string TxtFile;
     private string txt;
-    public GameObject block, player, finish;
+    public GameObject block, player, finish, key, barrier;
 
     // Start is called before the first frame update
     void Start()
     {
-        txt = File.ReadAllText(Application.dataPath + TxtFile);
+        txt = File.ReadAllText(Application.dataPath + @"\" + "StreamingAssets" + @"\" + "Levels" + @"\" + TxtFile + ".txt");
         buildLevel(txt);
     }
 
@@ -22,7 +22,7 @@ public class customLevelBuilder : MonoBehaviour
         
     }
 
-    void buildLevel(string file){
+     public void buildLevel(string file){
         List<List<string>> lst = buildList(file);
         for(int i = 0; i < lst.Count; i++){
             for(int k = 0; k < lst.Count; k++){
@@ -38,11 +38,21 @@ public class customLevelBuilder : MonoBehaviour
                 else if(lst[i][k] == "F"){
                     Instantiate(finish, new Vector3((9f/lst.Count) * (k) - 4.5f + ((9f/lst.Count)/2), (9f/lst.Count) * (lst.Count-1-i) - 4.5f + ((9f/lst.Count)/2), 0f), Quaternion.Euler(0f, 0f, 0f));
                 }
+                else if(lst[i][k] == "K"){
+                    Instantiate(key, new Vector3((9f/lst.Count) * (k) - 4.5f + ((9f/lst.Count)/2), (9f/lst.Count) * (lst.Count-1-i) - 4.5f + ((9f/lst.Count)/2), 0f), Quaternion.Euler(0f, 0f, 0f));
+                }
+                else if(lst[i][k] == "L"){
+                    Instantiate(barrier, new Vector3((9f/lst.Count) * (k) - 4.5f + ((9f/lst.Count)/2), (9f/lst.Count) * (lst.Count-1-i) - 4.5f + ((9f/lst.Count)/2), 0f), Quaternion.Euler(0f, 0f, 0f));
+                }
             }
         }
         GameObject[] scale = GameObject.FindGameObjectsWithTag("block");
         for(int i = 0; i < scale.Length; i++){
             scale[i].GetComponent<Transform>().localScale = new Vector3((9f/(lst.Count)), (9f/(lst.Count)), 1f);
+        }
+        GameObject[] doors = GameObject.FindGameObjectsWithTag("door");
+        for(int i = 0; i < doors.Length; i++){
+            doors[i].GetComponent<Transform>().localScale = new Vector3((9f/(lst.Count)), (9f/(lst.Count)), 1f);
         }
     }
 

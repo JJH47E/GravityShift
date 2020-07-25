@@ -7,7 +7,7 @@ public class gravityController : MonoBehaviour
     public float gravity = 9.1f;
     public Rigidbody2D rb;
     private Transform camera;
-    private float gravConstant;
+    private float gravConstant, gravDirection;
     private bool flipXY = false;
 
     // Start is called before the first frame update
@@ -20,24 +20,25 @@ public class gravityController : MonoBehaviour
     void Update()
     {
         //Debug.Log(camera.rotation.eulerAngles.z);
-        if(Mathf.Abs(camera.rotation.eulerAngles.z % 360f) <= 45f){
+        gravDirection = Mathf.Abs(camera.rotation.eulerAngles.z % 360f);
+        if(gravDirection <= 0.25f && gravDirection >= 0f){
             gravConstant = -1f;
             flipXY = false;
         }
-        else if(Mathf.Abs(camera.rotation.eulerAngles.z % 270f) <= 45f){
-            gravConstant = -1f;
+        else if(gravDirection <= 90.25f && gravDirection >= 89.75f){
+            gravConstant = 1f;
             flipXY = true;
         }
-        else if(Mathf.Abs(camera.rotation.eulerAngles.z % 180f) <= 45f){
+        else if(gravDirection <= 180.25f && gravDirection >= 179.75f){
             gravConstant = 1f;
             flipXY = false;
         }
-        else if(Mathf.Abs(camera.rotation.eulerAngles.z % 90f) <= 45f){
-            gravConstant = 1f;
+        else if(gravDirection <= 270.25f && gravDirection >= 269.75f){
+            gravConstant = -1f;
             flipXY = true;
         }
         else{
-            Debug.Log("ERROR");
+            //Debug.Log("ERROR");
         }
         if(flipXY == true){
             rb.velocity += new Vector2(gravity, 0) * Time.deltaTime * gravConstant;

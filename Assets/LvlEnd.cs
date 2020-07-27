@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class LvlEnd : MonoBehaviour
 {
     private bool colliding = false;
+    public bool custom = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,13 +33,20 @@ public class LvlEnd : MonoBehaviour
 
     IEnumerator EndLvl(){
         yield return new WaitForSeconds(1f);
-        if(colliding == true){
-            if(GameObject.Find("rotateHandler").GetComponent<rotationController>().moves < PlayerPrefs.GetInt("pb" + GameObject.FindWithTag("levelCounter").GetComponent<LvlCounter>().minusLevel().ToString())){
-                PlayerPrefs.SetInt("pb" + GameObject.FindWithTag("levelCounter").GetComponent<LvlCounter>().minusLevel().ToString(), GameObject.Find("rotateHandler").GetComponent<rotationController>().moves);
+        if(custom == false){
+            if(colliding == true){
+                if(GameObject.Find("rotateHandler").GetComponent<rotationController>().moves < PlayerPrefs.GetInt("pb" + GameObject.FindWithTag("levelCounter").GetComponent<LvlCounter>().minusLevel().ToString())){
+                    PlayerPrefs.SetInt("pb" + GameObject.FindWithTag("levelCounter").GetComponent<LvlCounter>().minusLevel().ToString(), GameObject.Find("rotateHandler").GetComponent<rotationController>().moves);
+                }
+                Debug.Log(GameObject.Find("rotateHandler").GetComponent<rotationController>().moves);
+                Debug.Log("pb" + GameObject.FindWithTag("levelCounter").GetComponent<LvlCounter>().minusLevel().ToString());
+                SceneManager.LoadScene("PostLvl");
             }
-            Debug.Log(GameObject.Find("rotateHandler").GetComponent<rotationController>().moves);
-            Debug.Log("pb" + GameObject.FindWithTag("levelCounter").GetComponent<LvlCounter>().minusLevel().ToString());
-            SceneManager.LoadScene("PostLvl");
+        }
+        else{
+            if(colliding == true){
+                SceneManager.LoadScene("custom");
+            }
         }
     }
 }

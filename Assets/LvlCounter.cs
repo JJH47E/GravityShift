@@ -19,7 +19,7 @@ public class LvlCounter : MonoBehaviour
         for(int i = 0; i < lvls; i++){
             pbScore.Add(100);
             if(!(PlayerPrefs.HasKey("pb" + i.ToString()))){
-                PlayerPrefs.SetInt("pb" + i.ToString(), 100);
+                PlayerPrefs.SetInt("pb" + i.ToString(), int.MaxValue);
             }
             else{
                 pbScore[i] = PlayerPrefs.GetInt("pb" + i.ToString());

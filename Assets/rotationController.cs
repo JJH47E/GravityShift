@@ -30,7 +30,7 @@ public class rotationController : MonoBehaviour
             anticlockwise = true;
         }
         else if(Input.GetKeyDown(KeyCode.A)){
-            PlayerPrefs.DeleteAll();
+            //PlayerPrefs.DeleteAll();
         }
         else if(menuScreen == false && Input.GetKeyDown(KeyCode.R)){
             Scene scene = SceneManager.GetActiveScene();

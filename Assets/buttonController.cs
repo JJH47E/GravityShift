@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
 using System.IO;
+using TMPro;
 using UnityEngine.Networking;
 
 public class buttonController : MonoBehaviour
 {
-    public TextMeshProUGUI txt;
     public GameObject data;
     // Start is called before the first frame update
     void Start()
@@ -39,18 +38,11 @@ public class buttonController : MonoBehaviour
     }
 
     public void playCustom(){
+        string path = gameObject.GetComponent<buttonInfo>().getPath();
+        GameObject.FindWithTag("GameController").GetComponent<persistentData>().setPath(path);
+        Debug.Log(path);
+        Debug.Log("Loading Level...");
         SceneManager.LoadScene("playCustom");
-    }
-
-    public void downloadCustom(){
-        string url = txt.text;
-        fetchLevel(url);
-    }
-
-    public void fetchLevel(string url){
-        GameObject d = Instantiate(data, new Vector3(0f, 0f, 0f), Quaternion.Euler(0, 0, 0));
-        d.GetComponent<persistentData>().setName(url);
-        playCustom();
     }
 
     public void loadLevel(){

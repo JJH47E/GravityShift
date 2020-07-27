@@ -628,7 +628,7 @@ GameObject:
   - component: {fileID: 951176832}
   m_Layer: 5
   m_Name: Button
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -665,7 +665,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62358466a50395e438487fcf24b14a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  txt: {fileID: 0}
   data: {fileID: 0}
 --- !u!114 &951176833
 MonoBehaviour:
@@ -893,7 +892,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62358466a50395e438487fcf24b14a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  txt: {fileID: 0}
   data: {fileID: 0}
 --- !u!114 &1197369880
 MonoBehaviour:

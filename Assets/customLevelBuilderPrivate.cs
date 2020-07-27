@@ -6,6 +6,7 @@ using System.IO;
 public class customLevelBuilderPrivate : MonoBehaviour
 {
     public GameObject block, player, finish, key, barrier;
+    private bool build = true;
 
     // Start is called before the first frame update
     void Start()
@@ -16,10 +17,13 @@ public class customLevelBuilderPrivate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(build == true){
+            buildLevel(File.ReadAllText(GameObject.FindWithTag("GameController").GetComponent<persistentData>().getPath()));
+        }
     }
 
      public void buildLevel(string file){
+        build = false;
         List<List<string>> lst = buildList(file);
         for(int i = 0; i < lst.Count; i++){
             for(int k = 0; k < lst.Count; k++){

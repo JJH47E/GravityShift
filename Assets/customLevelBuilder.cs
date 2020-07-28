@@ -12,7 +12,7 @@ public class customLevelBuilder : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        txt = File.ReadAllText(Application.dataPath + @"\" + "StreamingAssets" + @"\" + "Levels" + @"\" + TxtFile + ".txt");
+        txt = File.ReadAllText(Application.dataPath + @"\" + "Levels" + @"\" + TxtFile + ".txt");
         buildLevel(txt);
     }
 

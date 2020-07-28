@@ -54,6 +54,9 @@ public class findLevels : MonoBehaviour
 
     bool legalCustomLevel(string text){
         List<List<string>> tempVar = buildList(text);
+        if(tempVar.Count == 1){
+            return false;
+        }
         for(int i = 0; i < tempVar.Count - 1; i++){
             tempVar[i].RemoveAt(tempVar.Count - 1);
         }

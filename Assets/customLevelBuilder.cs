@@ -5,15 +5,13 @@ using System.IO;
 
 public class customLevelBuilder : MonoBehaviour
 {
-    public string TxtFile;
-    private string txt;
+    public TextAsset TxtFile;
     public GameObject block, player, finish, key, barrier;
 
     // Start is called before the first frame update
     void Start()
     {
-        txt = File.ReadAllText(Application.dataPath + @"\" + "Levels" + @"\" + TxtFile + ".txt");
-        buildLevel(txt);
+        buildLevel(TxtFile.text);
     }
 
     // Update is called once per frame

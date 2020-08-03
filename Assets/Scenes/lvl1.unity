@@ -500,8 +500,8 @@ PrefabInstance:
     - target: {fileID: 5641965517744836563, guid: db2d9010edeffed4f9b95f04ee023078,
         type: 3}
       propertyPath: TxtFile
-      value: lvl1
-      objectReference: {fileID: 0}
+      value: 
+      objectReference: {fileID: 4900000, guid: 010758369e8b63f438bfeaaba9f796a4, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db2d9010edeffed4f9b95f04ee023078, type: 3}
 --- !u!1001 &6246813672495432385
